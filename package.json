@@ -1,0 +1,31 @@
+{
+  "name": "ibeacon-dev-tools",
+  "preferGlobal": true,
+  "version": "0.0.1",
+  "author": "Andrew Reitz <aj.reitz@gmail.com>",
+  "description": "iBeacon Dev Tools",
+  "bin": {
+    "ibeacon-cli": "./bin/ibeacon-cli"
+  },
+  "scripts": {
+    "start": "node ./bin/ibeacon-cli"
+  },
+  "main": "./lib/ibeacon-cli",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pieces029/TODO"
+  },
+  "keywords": [
+    "cli",
+    "ibeacon"
+  ],
+  "dependencies": {
+    "optimist": "~0.6.1",
+    "bleacon": "~0.2.0",
+    "uuid": "~1.4.1"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.10"
+  }
+}

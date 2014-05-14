@@ -1,0 +1,54 @@
+#!/usr/bin/env node
+
+var uuid = require('uuid');
+var Bleacon = require('bleacon');
+var optimist = require('optimist');
+
+var argv = optimist
+  .usage('iBeacon command line utility')
+  .describe('h', 'Displays this message')
+  .alias('h', 'help')
+  .describe('v', 'Displayes the version')
+  .alias('v', 'version')
+  .describe('s', 'Scan for iBeacons')
+  .alias('s', 'scan')
+  .describe('b', 'Broadcast as an iBeacon\n\nScan options:')
+  .alias('b', 'broadcast')
+  .describe('i', 'Time interval in seconds')
+  .alias('i', 'interval')
+  .describe('u', 'Proximity UUID\n\nBroadcast options:')
+  .alias('u', 'uuid')
+  .default('u', uuid.v4())
+  .describe('M', 'Major Identifier')
+  .alias('M', 'major')
+  .default('M', 1)
+  .describe('m', 'Minor Identifier')
+  .alias('m', 'minor')
+  .default('m', 0)
+  .describe('p', 'Advertised Power')
+  .alias('p', 'power')
+  .default('p', -59)
+  .argv;
+
+if (argv.help) {
+  console.log(optimist.help());
+  return;
+}
+
+if (argv.version) {
+  // TODO get version from package.json
+  console.log('iBeacon version 0.0.1');
+  return;
+}
+
+if (argv.broadcast) {
+  var uuid = argv.uuid;
+  var major = argv.major;
+  var minor = argv.minor;
+  var measuredPower = argv.power;
+
+  console.log('Starting broadcast with uuid: ' + uuid + ' major: '
+  	+ major + ' minor: ' + minor + ' power: ' + measuredPower);
+
+  Bleacon.startAdvertising(uuid, major, minor, measuredPower);
+}
