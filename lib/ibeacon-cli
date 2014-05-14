@@ -12,22 +12,17 @@ var argv = optimist
   .alias('v', 'version')
   .describe('s', 'Scan for iBeacons')
   .alias('s', 'scan')
-  .describe('b', 'Broadcast as an iBeacon\n\nScan options:')
+  .describe('b', 'Broadcast as an iBeacon')
   .alias('b', 'broadcast')
-  .describe('i', 'Time interval in seconds')
-  .alias('i', 'interval')
-  .describe('u', 'Proximity UUID\n\nBroadcast options:')
+  .describe('u', 'Proximity UUID')
   .alias('u', 'uuid')
-  .default('u', uuid.v4())
   .describe('M', 'Major Identifier')
   .alias('M', 'major')
-  .default('M', 1)
   .describe('m', 'Minor Identifier')
   .alias('m', 'minor')
-  .default('m', 0)
   .describe('p', 'Advertised Power')
   .alias('p', 'power')
-  .default('p', -59)
+  .default('p', -32)
   .argv;
 
 if (argv.help) {
@@ -42,13 +37,35 @@ if (argv.version) {
 }
 
 if (argv.broadcast) {
-  var uuid = argv.uuid;
-  var major = argv.major;
-  var minor = argv.minor;
+  var uuid = argv.uuid ? argv.uuid : uuid.v4();
+  var major = argv.major ? argv.major : 1;
+  var minor = argv.minor ? argv.minor : 0;
   var measuredPower = argv.power;
 
   console.log('Starting broadcast with uuid: ' + uuid + ' major: '
   	+ major + ' minor: ' + minor + ' power: ' + measuredPower);
 
   Bleacon.startAdvertising(uuid, major, minor, measuredPower);
+}
+
+if (argv.scan) {
+  var uuid = argv.uuid;
+  var major = argv.major;
+  var minor = argv.minor;
+
+  if (uuid && major && minor) {
+    console.log('Starting scan for uuid: ' + uuid + ' major: '
+      + major + ' minor: ' + minor);
+    Bleacon.startScanning(uuid, major, minor);
+  } else if(uuid && major) {
+    console.log('Starting scan for uuid: ' + uuid + ' major: '
+      + major);
+    Bleacon.startScanning(uuid, major);
+  } else if(uuid) {
+    console.log('Starting scan for uuid: ' + uuid);
+    Bleacon.startScanning(uuid, major);
+  } else {
+    console.log('Starting scan');
+    Bleacon.startScanning();
+  }
 }
