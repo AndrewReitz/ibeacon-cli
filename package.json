@@ -1,11 +1,15 @@
 {
-  "name": "ibeacon-dev-tools",
+  "name": "ibeacon-cli",
   "preferGlobal": true,
   "version": "0.0.1",
-  "author": "Andrew Reitz <aj.reitz@gmail.com>",
-  "description": "iBeacon Dev Tools",
+  "author": "Andrew Reitz <andrew@andrewreitz.com>",
+  "description": "iBeacon Tools for Developing for iBeacons",
+  "homepage": "andrewreitz.com",
+  "bugs": {
+      "url": "https://github.com/pieces029/ibeacon-cli/issues"
+    },
   "bin": {
-    "ibeacon-cli": "./bin/ibeacon-cli"
+    "ibeacon": "./bin/ibeacon-cli"
   },
   "scripts": {
     "start": "node ./bin/ibeacon-cli"
@@ -24,7 +28,13 @@
     "bleacon": "~0.2.0",
     "uuid": "~1.4.1"
   },
-  "license": "MIT",
+  "licenses": [
+    {
+      "type": "GPL2",
+      "url": "https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt"
+    }
+  ],
+  "preferGlobal": true,
   "engines": {
     "node": ">=0.10"
   }
