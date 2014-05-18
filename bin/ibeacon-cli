@@ -46,7 +46,7 @@ var argv = optimist
 
 if (argv.version) {
   // TODO get version from package.json
-  console.log('iBeacon version 0.0.1');
+  console.log('iBeacon version 0.0.2');
   process.exit();
 }
 
