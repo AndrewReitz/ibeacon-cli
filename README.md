@@ -8,7 +8,7 @@ See `ibeacon --help` for more options
 
 ## Installing
 
-`npm install -g ibeacon-cli`
+`npm install -g ibeacon-cli` (This requires libbluetooth-dev to be installed)
 
 ## License
 
