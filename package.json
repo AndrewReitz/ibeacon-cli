@@ -17,7 +17,7 @@
   "main": "./lib/ibeacon-cli",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pieces029/TODO"
+    "url": "https://github.com/pieces029/ibeacon-cli"
   },
   "keywords": [
     "cli",
