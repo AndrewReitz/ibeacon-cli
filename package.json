@@ -1,10 +1,10 @@
 {
   "name": "ibeacon-cli",
   "preferGlobal": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Andrew Reitz <andrew@andrewreitz.com>",
   "description": "iBeacon Tools for Developing for iBeacons",
-  "homepage": "andrewreitz.com",
+  "homepage": "https://github.com/pieces029/ibeacon-cli",
   "bugs": {
       "url": "https://github.com/pieces029/ibeacon-cli/issues"
     },
