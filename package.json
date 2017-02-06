@@ -1,7 +1,7 @@
 {
   "name": "ibeacon-cli",
   "preferGlobal": true,
-  "version": "0.1.1",
+  "version": "0.2.0",
   "author": "Andrew Reitz <andrew@andrewreitz.com>",
   "description": "iBeacon Tools for Developing for iBeacons",
   "homepage": "https://github.com/pieces029/ibeacon-cli",
@@ -24,9 +24,9 @@
     "ibeacon"
   ],
   "dependencies": {
-    "optimist": "~0.6.1",
-    "bleacon": "~0.2.0",
-    "uuid": "~1.4.1"
+    "yargs": "~6.6.0",
+    "bleacon": "~0.5.1",
+    "uuid": "~3.0.1"
   },
   "licenses": [
     {

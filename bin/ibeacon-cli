@@ -10,7 +10,7 @@
 
   This program is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
   See the GNU General Public License for more details.
 
@@ -21,7 +21,7 @@
 
 var uuid = require('uuid');
 var Bleacon = require('bleacon');
-var optimist = require('optimist');
+var optimist = require('yargs');
 
 var argv = optimist
   .usage('iBeacon command line utility')
@@ -45,8 +45,7 @@ var argv = optimist
   .argv;
 
 if (argv.version) {
-  // TODO get version from package.json
-  console.log('iBeacon version 0.0.2');
+  console.log('iBeacon version 0.2.0');
   process.exit();
 }
 
