@@ -21,9 +21,9 @@
 
 var uuid = require('uuid');
 var Bleacon = require('bleacon');
-var optimist = require('yargs');
+var yargs = require('yargs');
 
-var argv = optimist
+var argv = yargs
   .usage('iBeacon command line utility')
   .describe('h', 'Displays this message')
   .alias('h', 'help')
@@ -88,6 +88,6 @@ if (argv.scan) {
 }
 
 if (argv.help || (!argv.scan && !argv.broadcast)) {
-  console.log(optimist.help());
+  console.log(yargs.help());
   process.exit();
 }
